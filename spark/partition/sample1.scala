@@ -2,22 +2,22 @@
 val memberList = List("A-san", "B-san", "C-san")
 val memberRDD = sc.parallelize(memberList)
 
-def fasterThanEver(member: String) = {
-  val slogan = " is faster than ever."
+def overTakeMyself(member: String) = {
+  val slogan = " overtake myself."
   member + slogan
 }
 
-val fasterMember = memberRDD.map(member => fasterThanEver(member))
-fasterMember.foreach(println)
+val overTakeMember = memberRDD.map(member => overTakeMyself(member))
+overTakeMember.foreach(println)
 
 // use mapPartitions function
 val memberList = List("D-san", "E-san", "F-san")
 val memberRDD = sc.parallelize(memberList)
 
-def fasterThanEver(members: Iterator[String]) = {
-  val slogan = " is faster than ever."
+def overTakeMyself(members: Iterator[String]) = {
+  val slogan = " overtake myself."
   members.map(member => member + slogan)
 }
 
-val fasterMember = memberRDD.mapPartitions(fasterThanEver)
-fasterMember.foreach(println)
+val overTakeMember = memberRDD.mapPartitions(overTakeMyself)
+overTakeMember.foreach(println)
