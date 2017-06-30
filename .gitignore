@@ -1,4 +1,9 @@
 .idea/
 output/
 spark/link.txt
+.cache-main
+.classpath
+.project
+project/
+target/
 
