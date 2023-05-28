@@ -1,0 +1,17 @@
+@(message: String, question: Question, fakeChoices: List[String])
+
+@main("BlueSkyからの問題") {
+
+@message
+<p>問題：@question.question</p>
+<p>答え：@question.answer</p>
+
+<p>選択肢</p>
+@fakeChoices.zipWithIndex.map { case (choice, i) =>
+    <div>
+        @choice
+        <input type="button" value=@(i+1)>
+    </div>
+}
+
+}

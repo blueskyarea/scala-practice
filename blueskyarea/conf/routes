@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+GET     /facebook                   controllers.FacebookController.showFacebook
+GET     /login                      controllers.FacebookController.login
+GET     /callback                   controllers.FacebookController.callback(hash)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# 出題ページ
+GET     /question                   controllers.QuestionController.showQuestion()
